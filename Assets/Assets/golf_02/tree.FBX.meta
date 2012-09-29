@@ -1,0 +1,140 @@
+fileFormatVersion: 1
+guid: ff6b8fd660ecf4d52b58f66c26011118
+ModelImporter:
+  importerVersion: 7
+  meshes:
+    scaleFactor: 0.01
+    useFileUnits: 1
+    meshCompression: 0
+    generateColliders: 0
+    swapUVs: 0
+  tangentSpace:
+    normalImportMode: 0
+    tangentImportMode: 1
+    smoothingAngle: 60
+    splitTangents: 1
+  materials:
+    generation: 1
+  animations:
+    generation: 3
+    bakeAnimations: 0
+    animationCompression: 1
+    animationWrapMode: 0
+    splitAnimations: 1
+    clips:
+      swing:
+        firstFrame: 1
+        lastFrame: 120
+        loop: 0
+        wrapMode: 2
+  nodeInfo:
+    Bone022:
+    - 100000
+    - 400000
+    //RootNode:
+    - 100002
+    - 400002
+    - 11100000
+    Bone010:
+    - 100004
+    - 400004
+    Circle002:
+    - 100006
+    - 400006
+    Circle010:
+    - 100008
+    - 400008
+    Circle011:
+    - 100010
+    - 400010
+    Bone017:
+    - 100012
+    - 400012
+    Bone009:
+    - 100014
+    - 400014
+    Bone008:
+    - 100016
+    - 400016
+    Bone018:
+    - 100018
+    - 400018
+    Bone020:
+    - 100020
+    - 400020
+    Circle007:
+    - 100022
+    - 400022
+    Circle009:
+    - 100024
+    - 400024
+    Circle005:
+    - 100026
+    - 400026
+    Circle006:
+    - 100028
+    - 400028
+    Bone019:
+    - 100030
+    - 400030
+    Circle012:
+    - 100032
+    - 400032
+    Bone015:
+    - 100034
+    - 400034
+    Bone013:
+    - 100036
+    - 400036
+    Bone007:
+    - 100038
+    - 400038
+    Bone012:
+    - 100040
+    - 400040
+    Bone021:
+    - 100042
+    - 400042
+    Bone011:
+    - 100044
+    - 400044
+    Circle008:
+    - 100046
+    - 400046
+    Bone002:
+    - 100048
+    - 400048
+    Circle004:
+    - 100050
+    - 400050
+    Bone001:
+    - 100052
+    - 400052
+    Circle013:
+    - 100054
+    - 400054
+    Circle001:
+    - 100056
+    - 400056
+    Tree:
+    - 100058
+    - 400058
+    - 13700000
+    Bone003:
+    - 100060
+    - 400060
+    Bone004:
+    - 100062
+    - 400062
+    Bone005:
+    - 100064
+    - 400064
+    Circle003:
+    - 100066
+    - 400066
+AssetImporter:
+  importerVersion: 1
+  fileIDToRecycleName:
+    4300000: Tree
+    7400000: Take 001 //// tree
+    7400002: swing //// tree

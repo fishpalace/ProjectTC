@@ -1,0 +1,51 @@
+fileFormatVersion: 1
+guid: d91211e11e0d746d8874da58d42c182e
+ModelImporter:
+  importerVersion: 7
+  meshes:
+    scaleFactor: 0.01
+    useFileUnits: 1
+    meshCompression: 0
+    generateColliders: 0
+    swapUVs: 0
+  tangentSpace:
+    normalImportMode: 0
+    tangentImportMode: 1
+    smoothingAngle: 60
+    splitTangents: 1
+  materials:
+    generation: 1
+  animations:
+    generation: 3
+    bakeAnimations: 0
+    animationCompression: 1
+    animationWrapMode: 0
+    splitAnimations: 1
+    clips:
+      swing:
+        firstFrame: 1
+        lastFrame: 120
+        loop: 0
+        wrapMode: 2
+  nodeInfo:
+    //RootNode:
+    - 100000
+    - 400000
+    - 11100000
+    Box025:
+    - 100002
+    - 400002
+    - 3300000
+    - 2300000
+    Cylinder003:
+    - 100004
+    - 400004
+    - 3300002
+    - 2300002
+AssetImporter:
+  importerVersion: 1
+  fileIDToRecycleName:
+    4300000: Cylinder003
+    4300002: Box025
+    7400000: Take 001 //// denglong
+    7400002: swing //// denglong

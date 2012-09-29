@@ -1,0 +1,43 @@
+fileFormatVersion: 1
+guid: bbf60a03f22b7492cbb624f847bcd685
+ModelImporter:
+  importerVersion: 7
+  meshes:
+    scaleFactor: 0.01
+    useFileUnits: 1
+    meshCompression: 0
+    generateColliders: 0
+    swapUVs: 0
+  tangentSpace:
+    normalImportMode: 0
+    tangentImportMode: 1
+    smoothingAngle: 60
+    splitTangents: 1
+  materials:
+    generation: 1
+  animations:
+    generation: 3
+    bakeAnimations: 0
+    animationCompression: 1
+    animationWrapMode: 0
+    splitAnimations: 1
+    clips:
+      swing:
+        firstFrame: 1
+        lastFrame: 120
+        loop: 0
+        wrapMode: 2
+  nodeInfo:
+    //RootNode:
+    - 100000
+    - 400000
+    - 3300000
+    - 2300000
+    - 11100000
+AssetImporter:
+  importerVersion: 1
+  fileIDToRecycleName:
+    4300000: Box024
+    7400000: Take 001 //// zombie_head
+    7400002: swing //// zombie_head
+    7400004: swing //// Box024
