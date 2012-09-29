@@ -1,3 +1,4 @@
+.DS_Store
 Library/cache
 Library/metadata
 Library/previews
@@ -15,7 +16,7 @@ Library/FailedAssetImports.txt
 Library/guidmapper
 Library/InspectorExpandedItems.asset
 Library/MonoManager.asset
-Library/ScriptAssemblies/Assembly-CSharp.dll
-Library/ScriptAssemblies/Assembly-CSharp.dll.mdb
-Library/ScriptAssemblies/CompilationCompleted.txt
+Library/ScriptAssemblies
 Library/ScriptMapper
+*.pidb
+build
