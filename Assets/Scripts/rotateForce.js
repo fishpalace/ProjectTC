@@ -64,7 +64,7 @@ function OnCollisionEnter(groundCollider : Collision){
 	    	Destroy (gameObject);
 		}		
 	}
-	if(groundCollider.gameObject.name == "obj_eye_ball"){
+	if(groundCollider.gameObject.name == "testCollisionBall"){
 		var contact1 : ContactPoint = groundCollider.contacts[0];    
 	    var rot1 : Quaternion = Quaternion.FromToRotation(Vector3.up, contact1.normal);   
 	    var pos1 : Vector3 = contact1.point;    
