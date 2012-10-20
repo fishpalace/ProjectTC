@@ -8,10 +8,12 @@ var currentVelocity:Vector3;
 var hasReachedCircle:boolean;
 var hasReachedOutCircle:boolean;
 var hasReachedGround:boolean;
+var startPosition:Vector3;
 //var explosionEmitter:ParticleEmitter;
 //var groundCollider:Collider;
 var explosionPrefab : Transform;
 var circle:GameObject;
+
 
 function Start () {
 	circlePoint.x = circle.transform.position.x;
@@ -19,8 +21,8 @@ function Start () {
 	hasReachedCircle = false;
 	hasReachedOutCircle = false;
 	hasReachedGround = false;
+	startPosition = gameObject.transform.position;
 }
-
 function Update () 
 {
 	currentPoint.x = gameObject.rigidbody.position.x;
@@ -71,6 +73,7 @@ function OnCollisionEnter(groundCollider : Collision){
 	    Instantiate(explosionPrefab, pos1, rot1);    
 	    // Destroy the projectile    
 	    Destroy (gameObject);
+	    Instantiate(gameObject.rigidbody, startPosition, gameObject.transform.rotation);  
 	}
 }
 

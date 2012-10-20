@@ -9,6 +9,9 @@ private var MAX_SPEED : float;
 
 function Start () {
 	MAX_SPEED = 30.0;
+	isAllMouseEventHappened = false;
+	timeStart = 0;
+	timeEnd = 0;
 }
 
 function Update () {

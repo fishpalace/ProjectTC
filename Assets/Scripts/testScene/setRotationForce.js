@@ -11,17 +11,24 @@ var hasReachedGround:boolean;
 //var explosionEmitter:ParticleEmitter;
 //var groundCollider:Collider;
 var explosionPrefab : Transform;
+var initialPosition : Vector3;
+var initialGameObject : Transform;
 
 function Start () {
+	
 	circlePoint.x = -8.675226;
 	circlePoint.y = -13.72104;
 	hasReachedCircle = false;
 	hasReachedOutCircle = false;
 	hasReachedGround = false;
+	initialPosition = gameObject.transform.position;
+	gameObject.rigidbody.velocity = Vector3(1,0,0);
 }
 
 function Update () 
 {
+	var a = Random.Range(0.0,100.0);
+	Debug.Log(a);
 	currentPoint.x = gameObject.rigidbody.position.x;
 	currentPoint.y = gameObject.rigidbody.position.z;
 	var deltaX = circlePoint.x - currentPoint.x;
@@ -62,6 +69,10 @@ function OnCollisionEnter(groundCollider : Collision){
 	    	Instantiate(explosionPrefab, pos, rot);    
 	    	// Destroy the projectile    
 	    	Destroy (gameObject);
+	    	// Instantiate the projectile at the position and rotation of this transform   
+	    	hasReachedGround = false;  
+	    	hasReachedCircle = false;    
+			Instantiate(initialGameObject, initialPosition, gameObject.transform.rotation);  
 		}		
 	}
 	if(groundCollider.gameObject.name == "obj_eye_ball"){
@@ -71,6 +82,10 @@ function OnCollisionEnter(groundCollider : Collision){
 	    Instantiate(explosionPrefab, pos1, rot1);    
 	    // Destroy the projectile    
 	    Destroy (gameObject);
+	    hasReachedGround = false;  
+	    hasReachedCircle = false;
+	    // Instantiate the projectile at the position and rotation of this transform        
+		Instantiate(initialGameObject, initialPosition, gameObject.transform.rotation);   
 	}
 }
 

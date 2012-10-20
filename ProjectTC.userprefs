@@ -1,12 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\testScene\setOriginalSpeed.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/testScene/gameOriginal.js">
     <Files>
-      <File FileName="Assets\Scripts\testScene\setOriginalSpeed.js" Line="4" Column="49" />
-      <File FileName="Assets\Scripts\ghostHeadRandomPlay.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\larternRandomPlay.js" Line="15" Column="11" />
-      <File FileName="Assets\Readme.txt" Line="16" Column="20" />
-      <File FileName="Assets\Scripts\testScene\mouseTestSpeedSet.js" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/testScene/gameOriginal.js" Line="7" Column="93" />
+      <File FileName="Assets/Scripts/testScene/setRotationForce.js" Line="91" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
