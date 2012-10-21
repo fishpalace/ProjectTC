@@ -13,7 +13,7 @@ var startPosition:Vector3;
 //var groundCollider:Collider;
 var explosionPrefab : Transform;
 var circle:GameObject;
-
+var ballPrefab:GameObject;
 
 function Start () {
 	circlePoint.x = circle.transform.position.x;
@@ -22,6 +22,7 @@ function Start () {
 	hasReachedOutCircle = false;
 	hasReachedGround = false;
 	startPosition = gameObject.transform.position;
+	ballPrefab = Resources.Load("obj_eye_ball");
 }
 function Update () 
 {
@@ -55,7 +56,7 @@ function OnCollisionEnter(groundCollider : Collision){
 		hasReachedGround = true;
 	}
 	if(hasReachedGround){
-		if(groundCollider.gameObject.name == "groud"){
+		if(groundCollider.gameObject.name == "groud02"){
 			//Debug.Log("Collision event happened!");
 	    	// Rotate the object so that the y-axis faces along the normal of the surface    
 	    	var contact : ContactPoint = groundCollider.contacts[0];    
@@ -64,6 +65,9 @@ function OnCollisionEnter(groundCollider : Collision){
 	    	Instantiate(explosionPrefab, pos, rot);    
 	    	// Destroy the projectile    
 	    	Destroy (gameObject);
+	    	hasReachedGround = false;  
+	    	hasReachedCircle = false;    
+			Instantiate(ballPrefab, startPosition, gameObject.transform.rotation);  
 		}		
 	}
 	if(groundCollider.gameObject.name == "testCollisionBall"){
@@ -73,7 +77,7 @@ function OnCollisionEnter(groundCollider : Collision){
 	    Instantiate(explosionPrefab, pos1, rot1);    
 	    // Destroy the projectile    
 	    Destroy (gameObject);
-	    Instantiate(gameObject.rigidbody, startPosition, gameObject.transform.rotation);  
+	    Instantiate(ballPrefab, startPosition, gameObject.transform.rotation);  
 	}
 }
 

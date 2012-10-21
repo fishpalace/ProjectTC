@@ -4,6 +4,7 @@ ModelImporter:
   fileIDToRecycleName:
     4300000: Tree009
     7400000: Take 001 //// tree02
+    7400002: Take 001 //// tree_v3.0
   serializedVersion: 10
   materials:
     importMaterials: 1

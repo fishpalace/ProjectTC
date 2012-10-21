@@ -12,7 +12,7 @@ var hasReachedGround:boolean;
 //var groundCollider:Collider;
 var explosionPrefab : Transform;
 var initialPosition : Vector3;
-var initialGameObject : Transform;
+var initialGameObject : GameObject;
 
 function Start () {
 	
@@ -23,6 +23,7 @@ function Start () {
 	hasReachedGround = false;
 	initialPosition = gameObject.transform.position;
 	gameObject.rigidbody.velocity = Vector3(1,0,0);
+	initialGameObject = Resources.Load("ball");
 }
 
 function Update () 
@@ -47,8 +48,7 @@ function Update ()
 		var vZ = gameObject.rigidbody.velocity.z;
 		var V = vX * vX + vZ * vZ;
 		transform.RotateAround (Vector3(-8.675226,3.850926,-13.72104), Vector3.up, 60 * Time.deltaTime);
-	}
-	
+	}	
 }
 
 
