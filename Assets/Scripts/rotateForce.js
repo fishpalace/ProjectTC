@@ -14,6 +14,7 @@ var startPosition:Vector3;
 var explosionPrefab : Transform;
 var circle:GameObject;
 var ballPrefab:GameObject;
+var newGameObject:GameObject;
 
 function Start () {
 	circlePoint.x = circle.transform.position.x;
@@ -23,6 +24,9 @@ function Start () {
 	hasReachedGround = false;
 	startPosition = gameObject.transform.position;
 	ballPrefab = Resources.Load("obj_eye_ball");
+	gameObject.name = "obj_eye_ball";
+	//gameObject.rigidbody.velocity = Vector3(-3,0,-4);
+	
 }
 function Update () 
 {
@@ -44,7 +48,9 @@ function Update ()
 		var vZ = gameObject.rigidbody.velocity.z;
 		var V = vX * vX + vZ * vZ;
 		transform.RotateAround (circle.transform.position, Vector3.up, 60 * Time.deltaTime);
+		
 	}
+	
 }
 
 
@@ -67,7 +73,8 @@ function OnCollisionEnter(groundCollider : Collision){
 	    	Destroy (gameObject);
 	    	hasReachedGround = false;  
 	    	hasReachedCircle = false;    
-			Instantiate(ballPrefab, startPosition, gameObject.transform.rotation);  
+			newGameObject = Instantiate(ballPrefab, startPosition, gameObject.transform.rotation);  
+			newGameObject.name = ballPrefab.name.Substring(0,12);
 		}		
 	}
 	if(groundCollider.gameObject.name == "testCollisionBall"){
@@ -77,7 +84,10 @@ function OnCollisionEnter(groundCollider : Collision){
 	    Instantiate(explosionPrefab, pos1, rot1);    
 	    // Destroy the projectile    
 	    Destroy (gameObject);
-	    Instantiate(ballPrefab, startPosition, gameObject.transform.rotation);  
+	    hasReachedGround = false;  
+	    hasReachedCircle = false; 
+	    newGameObject = Instantiate(ballPrefab, startPosition, gameObject.transform.rotation);  
+		newGameObject.name = ballPrefab.name.Substring(0,12);  
 	}
 }
 

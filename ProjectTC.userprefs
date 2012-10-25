@@ -1,10 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/testScene/setRotationForce.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/testScene/touchTest.js">
     <Files>
-      <File FileName="Assets/Scripts/testScene/setRotationForce.js" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/testScene/ballOriginal.js" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/rotateForce.js" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/testScene/touchTest.js" Line="67" Column="24" />
+      <File FileName="Assets/Scripts/rotateForce.js" Line="28" Column="4" />
+      <File FileName="Assets/Scripts/testScene/setOriginalSpeed.js" Line="16" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

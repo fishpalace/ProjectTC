@@ -44,56 +44,12 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\FingerGestures\Samples\Scripts\AdvancedPinchRotationSample.cs" />
-     <Compile Include="Assets\FingerGestures\Samples\Scripts\FingerEventsSamplePart1.cs" />
-     <Compile Include="Assets\FingerGestures\Samples\Scripts\FingerEventsSamplePart2.cs" />
-     <Compile Include="Assets\FingerGestures\Samples\Scripts\Internal\BasicSample.cs" />
-     <Compile Include="Assets\FingerGestures\Samples\Scripts\Internal\DragTrail.cs" />
-     <Compile Include="Assets\FingerGestures\Samples\Scripts\Internal\EmitParticles.cs" />
-     <Compile Include="Assets\FingerGestures\Samples\Scripts\Internal\MenuNode.cs" />
-     <Compile Include="Assets\FingerGestures\Samples\Scripts\Internal\SampleBase.cs" />
-     <Compile Include="Assets\FingerGestures\Samples\Scripts\Internal\SampleUI.cs" />
-     <Compile Include="Assets\FingerGestures\Samples\Scripts\Internal\StartMenu.cs" />
-     <Compile Include="Assets\FingerGestures\Samples\Scripts\Internal\SwipeParticlesEmitter.cs" />
-     <Compile Include="Assets\FingerGestures\Samples\Scripts\MultiFingerSwipeSample.cs" />
-     <Compile Include="Assets\FingerGestures\Samples\Scripts\OneFingerGestureSample.cs" />
-     <Compile Include="Assets\FingerGestures\Samples\Scripts\PinchRotationSample.cs" />
-     <Compile Include="Assets\FingerGestures\Samples\Scripts\ToolboxDragDropSample.cs" />
-     <Compile Include="Assets\FingerGestures\Samples\Scripts\ToolboxFingerEventsSample.cs" />
-     <Compile Include="Assets\FingerGestures\Samples\Scripts\ToolboxOneFingerGestureSample.cs" />
-     <Compile Include="Assets\FingerGestures\Samples\Scripts\TwoFingerGestureSample.cs" />
-     <Compile Include="Assets\FingerGestures\Samples\TouchPhaseVisualizer.cs" />
-     <Compile Include="Assets\FingerGestures\SkeletonCode\CSharpSkeleton.cs" />
-     <Compile Include="Assets\FingerGestures\Toolbox\Misc\TBDragOrbit.cs" />
-     <Compile Include="Assets\FingerGestures\Toolbox\Misc\TBPinchZoom.cs" />
-     <Compile Include="Assets\FingerGestures\Toolbox\TBComponent.cs" />
-     <Compile Include="Assets\FingerGestures\Toolbox\TBDrag.cs" />
-     <Compile Include="Assets\FingerGestures\Toolbox\TBFingerDown.cs" />
-     <Compile Include="Assets\FingerGestures\Toolbox\TBFingerUp.cs" />
-     <Compile Include="Assets\FingerGestures\Toolbox\TBInputManager.cs" />
-     <Compile Include="Assets\FingerGestures\Toolbox\TBLongPress.cs" />
-     <Compile Include="Assets\FingerGestures\Toolbox\TBSwipe.cs" />
-     <Compile Include="Assets\FingerGestures\Toolbox\TBTap.cs" />
-     <Compile Include="Assets\FingerGestures\Utils\GestureStateTracker.cs" />
-     <Compile Include="Assets\FingerGestures\Utils\MoveToFinger.cs" />
      <Compile Include="Assets\Scripts\CircleSpin.cs" />
      <Compile Include="Assets\Scripts\testScene\destroyBall.cs" />
-     <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
-     <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Background.shader" />
-     <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Transparent Vertex Color.shader" />
      <None Include="Assets\Readme.txt" />
-     <None Include="Assets\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Detail.shader" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
-     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
-     <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Reflective.shader" />
-     <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Particles Additive Culled.shader" />
-     <None Include="Assets\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Vertex Colored.shader" />
-     <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Only.shader" />
-     <None Include="Assets\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap AlphaTest.shader" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{B6BE8FE2-5B81-EC5F-0AAD-6C7F8D6FC81B}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
       <Project>{C5A966A5-2CAE-716B-E532-E3C01C940354}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
