@@ -44,6 +44,9 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\FingerGestures\Samples\Scripts\PickObject.js" />
+     <Compile Include="Assets\FingerGestures\Samples\Scripts\TapToPickObject.js" />
+     <Compile Include="Assets\FingerGestures\SkeletonCode\JavascriptSkeleton.js" />
      <Compile Include="Assets\Scripts\ghostHeadRandomPlay.js" />
      <Compile Include="Assets\Scripts\larternRandomPlay.js" />
      <Compile Include="Assets\Scripts\rotateForce.js" />
@@ -58,10 +61,13 @@
      <Compile Include="Assets\Scripts\testScene\setRotationForce.js" />
      <Compile Include="Assets\Scripts\testScene\setRotationSpeed.js" />
      <Compile Include="Assets\Scripts\testScene\touchTest.js" />
+     <Compile Include="Assets\Scripts\testScene\touchTest1.js" />
      <None Include="Assets\Readme.txt" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{B6BE8FE2-5B81-EC5F-0AAD-6C7F8D6FC81B}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
       <Project>{C5A966A5-2CAE-716B-E532-E3C01C940354}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>

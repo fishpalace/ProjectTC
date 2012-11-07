@@ -1,23 +1,27 @@
 #pragma strict
+var obj_eye : GameObject;
 var startTouchPosition:Vector2;
 var endTouchPosition:Vector2;
-var canSetSpeed:boolean = false;
-var isInBallRange:boolean = false;
-var hasRan:boolean = false;
+var canSetSpeed:boolean;
+var isInBallRange:boolean;
 var timeStart:float;
 var timeEnd:float;
 var mouseVelocity:Vector2;
 var cam:Camera;
-
 private var MAX_SPEED : float;
 
+
 function Start () {
+	canSetSpeed = false;
+	isInBallRange = false;
+	timeStart = 0.0;
+	timeEnd = 0.0;
 	MAX_SPEED = 20.0;
 }
 
-function Update() {
+function Update () {
+	obj_eye = GameObject.Find("obj_eye_ball");
 	var touchCount = Input.touchCount;
-	//Debug.Log(touchCount);
 	for(var i = 0; i < touchCount;i++)
 	{	
 		if(Input.GetTouch(i).phase == TouchPhase.Began)
@@ -26,7 +30,7 @@ function Update() {
 			var hit:RaycastHit;
             // Construct a ray from the current touch coordinates
     		 var ray : Ray = cam.ScreenPointToRay (startTouchPosition);
-   			 if (Physics.Raycast (ray, hit) && hit.transform.name.Substring(0,12) == gameObject.name)isInBallRange = true;
+   			 if (Physics.Raycast (ray, hit) && hit.transform.name.Substring(0,12) == obj_eye.name)isInBallRange = true;
 			else continue;
 			timeStart = Time.time;
 		}
@@ -35,11 +39,14 @@ function Update() {
 			endTouchPosition = Input.GetTouch(i).position;
 			timeEnd = Time.time;
 			if(isInBallRange){canSetSpeed = true;break;}
+			
 		}
 	}
 	var deltaTime = timeEnd - timeStart;
-	if(canSetSpeed && !hasRan)
+	Debug.Log(canSetSpeed);
+	if(canSetSpeed)
 	{
+		
 		if(deltaTime > 0)
 		{
 			var deltaDistanceX = endTouchPosition.x - startTouchPosition.x;
@@ -50,33 +57,17 @@ function Update() {
 		var totalVelocity = mouseVelocity.x * mouseVelocity.x + mouseVelocity.y * mouseVelocity.y;
 		var sqrTotalVelocity = Mathf.Sqrt(totalVelocity);
 		if(totalVelocity > (MAX_SPEED * MAX_SPEED)){
-			gameObject.rigidbody.velocity = Vector3(mouseVelocity.x * MAX_SPEED / sqrTotalVelocity,0,mouseVelocity.y * MAX_SPEED / sqrTotalVelocity);
-			hasRan = true;
+			obj_eye.rigidbody.velocity = Vector3(mouseVelocity.x * MAX_SPEED / sqrTotalVelocity,0,mouseVelocity.y * MAX_SPEED / sqrTotalVelocity);
 			//Debug.Log(gameObject.rigidbody.velocity);
+			canSetSpeed = false;
+			isInBallRange = false;
 		}
 		else
 		{
-			hasRan = true;
-			gameObject.rigidbody.velocity = Vector3(mouseVelocity.x,0,mouseVelocity.y);
+			obj_eye.rigidbody.velocity = Vector3(mouseVelocity.x,0,mouseVelocity.y);
 			//Debug.Log(gameObject.rigidbody.velocity);
+			canSetSpeed = false;
+			isInBallRange = false;
 		}
 	}
-}
-
-function IsInBallRange()
-{
-	/*var ballPosition = gameObject.transform.position;
-	var ballPositionInScreen = Camera.mainCamera.WorldToScreenPoint(ballPosition);
-	var touchPointInScreen = Camera.mainCamera.WorldToScreenPoint(startTouchPosition);
-	var size:float = 150;
-	//Debug.Log(startTouchPosition);
-	Debug.Log(ballPositionInScreen);
-	if(startTouchPosition.x > (ballPositionInScreen.x - size) &&
-		startTouchPosition.x < (ballPositionInScreen.x + size) &&
-		startTouchPosition.y > (ballPositionInScreen.y - size) &&
-		startTouchPosition.y < (ballPositionInScreen.y + size))
-	{
-		return true;	
-	}*/
-	
 }

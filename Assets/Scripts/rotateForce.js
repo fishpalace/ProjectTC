@@ -1,31 +1,35 @@
 #pragma strict
-var circlePoint : Vector2;
-var currentPoint : Vector2;
-var directionPoint : Vector2;
-var rotateForce : Vector2;
-var speedRotate : Vector3;
-var currentVelocity:Vector3;
-var hasReachedCircle:boolean;
-var hasReachedOutCircle:boolean;
-var hasReachedGround:boolean;
-var startPosition:Vector3;
+private var circlePoint : Vector2;
+private var currentPoint : Vector2;
+private var directionPoint : Vector2;
+private var rotateForce : Vector2;
+private var speedRotate : Vector3;
+private var currentVelocity:Vector3;
+private var hasReachedCircle:boolean;
+private var hasReachedOutCircle:boolean;
+private var hasReachedGround:boolean;
+private var startPosition:Vector3;
 //var explosionEmitter:ParticleEmitter;
 //var groundCollider:Collider;
 var explosionPrefab : Transform;
 var circle:GameObject;
 var ballPrefab:GameObject;
 var newGameObject:GameObject;
+var ballString : String;
+private var ballStringLength : int;
 
 function Start () {
 	circlePoint.x = circle.transform.position.x;
 	circlePoint.y = circle.transform.position.z;
+	ballString = gameObject.name;
+	ballStringLength = ballString.Length;
 	hasReachedCircle = false;
 	hasReachedOutCircle = false;
 	hasReachedGround = false;
 	startPosition = gameObject.transform.position;
-	ballPrefab = Resources.Load("obj_eye_ball");
-	gameObject.name = "obj_eye_ball";
-	//gameObject.rigidbody.velocity = Vector3(-3,0,-4);
+	ballPrefab = Resources.Load(ballString);
+	gameObject.name = ballString;
+	//gameObject.rigidbody.velocity = Vector3(-3.3,0,-4);
 	
 }
 function Update () 
@@ -74,7 +78,8 @@ function OnCollisionEnter(groundCollider : Collision){
 	    	hasReachedGround = false;  
 	    	hasReachedCircle = false;    
 			newGameObject = Instantiate(ballPrefab, startPosition, gameObject.transform.rotation);  
-			newGameObject.name = ballPrefab.name.Substring(0,12);
+			newGameObject.name = ballPrefab.name.Substring(0,ballStringLength);
+			//Debug.Log(newGameObject.name);
 		}		
 	}
 	if(groundCollider.gameObject.name == "testCollisionBall"){
@@ -87,7 +92,8 @@ function OnCollisionEnter(groundCollider : Collision){
 	    hasReachedGround = false;  
 	    hasReachedCircle = false; 
 	    newGameObject = Instantiate(ballPrefab, startPosition, gameObject.transform.rotation);  
-		newGameObject.name = ballPrefab.name.Substring(0,12);  
+		newGameObject.name = ballPrefab.name.Substring(0,ballStringLength);  
+		//Debug.Log(newGameObject.name);
 	}
 }
 
@@ -95,7 +101,7 @@ function IsInCircleRange()
 {
 	var deltaX = currentPoint.x - circlePoint.x;
 	var deltaY = currentPoint.y - circlePoint.y;
-	var delta = deltaX * deltaX + deltaY * deltaY ;
+	var delta = deltaX * deltaX + deltaY * deltaY;
 	//Debug.Log(delta);
 	if(delta < 90)
 	{
