@@ -76,9 +76,8 @@
      <Compile Include="Assets\FingerGestures\Toolbox\TBTap.cs" />
      <Compile Include="Assets\FingerGestures\Utils\GestureStateTracker.cs" />
      <Compile Include="Assets\FingerGestures\Utils\MoveToFinger.cs" />
-     <Compile Include="Assets\Scripts\CircleSpin.cs" />
+     <Compile Include="Assets\Scripts\golf\CircleSpin.cs" />
      <Compile Include="Assets\Scripts\testScene\destroyBall.cs" />
-     <Compile Include="Assets\Scripts\testScene\touchTest.cs" />
      <None Include="Assets\Readme.txt" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
  <Reference Include="Library\ScriptAssemblies\Assembly-UnityScript-firstpass">
