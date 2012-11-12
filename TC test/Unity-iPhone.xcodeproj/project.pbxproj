@@ -513,7 +513,7 @@ armv7
 					"-weak-lSystem",
 				);
 				PRODUCT_NAME = "tc";
-				SDKROOT = iphoneos6.0;
+				SDKROOT = iphoneos5.0;
 				TARGETED_DEVICE_FAMILY = "2";
 			};
 			name = Debug;
@@ -548,7 +548,7 @@ armv7
 					"-Wl,-S,-x",
 				);
 				PRODUCT_NAME = "tc";
-				SDKROOT = iphoneos6.0;
+				SDKROOT = iphoneos5.0;
 				TARGETED_DEVICE_FAMILY = "2";
 			};
 			name = Release;
@@ -577,7 +577,7 @@ armv7
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "tc";
-				SDKROOT = iphoneos6.0;
+				SDKROOT = iphoneos5.0;
 				TARGETED_DEVICE_FAMILY = "2";
 			};
 			name = Release;
@@ -607,7 +607,7 @@ armv7
 					"\"$(SRCROOT)/Libraries\"",
 				);
 				PRODUCT_NAME = "tc";
-				SDKROOT = iphoneos6.0;
+				SDKROOT = iphoneos5.0;
 				TARGETED_DEVICE_FAMILY = "2";
 			};
 			name = Debug;
@@ -631,7 +631,7 @@ armv7
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "";
 				PREBINDING = NO;
-				SDKROOT = iphoneos6.0;
+				SDKROOT = iphoneos5.0;
 			};
 			name = Debug;
 		};
@@ -654,7 +654,7 @@ armv7
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_LDFLAGS = "-Wl,-S,-x";
 				PREBINDING = NO;
-				SDKROOT = iphoneos6.0;
+				SDKROOT = iphoneos5.0;
 			};
 			name = Release;
 		};

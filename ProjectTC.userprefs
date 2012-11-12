@@ -3,7 +3,8 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/golf/rotateForce.js">
     <Files>
       <File FileName="../../Library/Containers/com.evernote.Evernote/Data/Library/Application Support/Evernote/accounts/Evernote-China/lr_5146/external-edits/166B4D90-553E-4C3B-8EEC-2C34FE55F084/MinerScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/golf/rotateForce.js" Line="30" Column="1" />
+      <File FileName="Assets/Scripts/golf/rotateForce.js" Line="66" Column="27" />
+      <File FileName="Assets/Scripts/golf/multiTouchManage.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -6,9 +6,11 @@ private var rotateForce : Vector2;
 private var speedRotate : Vector3;
 private var currentVelocity:Vector3;
 private var hasReachedCircle:boolean;
-private var hasReachedOutCircle:boolean;
+private var hasRan:boolean;
 private var hasReachedGround:boolean;
 private var startPosition:Vector3;
+private var lifeTime:float;
+private var lastFrameSpeed:Vector3;
 //var explosionEmitter:ParticleEmitter;
 //var groundCollider:Collider;
 var explosionPrefab : Transform;
@@ -24,16 +26,23 @@ function Start () {
 	ballString = gameObject.name;
 	ballStringLength = ballString.Length;
 	hasReachedCircle = false;
-	hasReachedOutCircle = false;
+	hasRan = false;
 	hasReachedGround = false;
 	startPosition = gameObject.transform.position;
 	ballPrefab = Resources.Load(ballString);
 	gameObject.name = ballString;
-	gameObject.rigidbody.velocity = Vector3(-7.5,0,-5.5);
+	//gameObject.rigidbody.velocity = Vector3(-13,0,-2);
 	
 }
-function Update () 
+function FixedUpdate () 
 {
+	if(hasReachCircleArea())
+	{
+		hasReachedCircle = true;
+		hasReachedGround = true;
+	}
+	JudgeLifeTime();
+	CountLastFrameSpeed();
 	currentPoint.x = gameObject.rigidbody.position.x;
 	currentPoint.y = gameObject.rigidbody.position.z;
 	var deltaX = circlePoint.x - currentPoint.x;
@@ -45,34 +54,32 @@ function Update ()
 	rotateForce.x = directionPoint.x;
 	rotateForce.y = directionPoint.y;
 	currentVelocity = gameObject.rigidbody.velocity;
-	//Debug.Log(currentVelocity);
 	if(IsInCircleRange())
 	{
 		var vX = gameObject.rigidbody.velocity.x;
 		var vZ = gameObject.rigidbody.velocity.z;
 		var V = vX * vX + vZ * vZ;
 		transform.RotateAround (circle.transform.position, Vector3.up, 60 * Time.deltaTime);
-		
+	}
+	else
+	{
+		if(hasReachedCircle)
+		{
+			gameObject.rigidbody.velocity = lastFrameSpeed;
+		}
 	}
 	
 }
 
 
 function OnCollisionEnter(groundCollider : Collision){
-
-	if(hasReachCircleArea())
-	{
-		hasReachedCircle = true;
-		hasReachedGround = true;
-	}
 	if(hasReachedGround){
 		if(!hasReachCircleArea()){
-			Debug.Log(hasReachedCircle);
-			newBall(groundCollider);
+			newBall();
 		}		
 	}
 	if(groundCollider.gameObject.name == "testCollisionBall"){
-		newBall(groundCollider);
+		newBall();
 	}
 }
 
@@ -81,7 +88,6 @@ function IsInCircleRange()
 	var deltaX = currentPoint.x - circlePoint.x;
 	var deltaY = currentPoint.y - circlePoint.y;
 	var delta = deltaX * deltaX + deltaY * deltaY;
-	//Debug.Log(delta);
 	if(delta < 90)
 	{
 		return true;
@@ -89,21 +95,20 @@ function IsInCircleRange()
 	return false;
 }
 
-function newBall(groundCollider : Collision)
+function newBall()
 {
 	//Debug.Log("Collision event happened!");
 	// Rotate the object so that the y-axis faces along the normal of the surface    
-	var contact : ContactPoint = groundCollider.contacts[0];    
+	/*var contact : ContactPoint = groundCollider.contacts[0];    
 	var rot : Quaternion = Quaternion.FromToRotation(Vector3.up, contact.normal);   
-	var pos : Vector3 = contact.point;    
-	Instantiate(explosionPrefab, pos, rot);    
+	var pos : Vector3 = contact.point;    */
+	Instantiate(explosionPrefab, gameObject.transform.position, gameObject.transform.rotation);    
 	// Destroy the projectile    
     Destroy (gameObject);
 	hasReachedGround = false;  
 	hasReachedCircle = false;    
 	newGameObject = Instantiate(ballPrefab, startPosition, gameObject.transform.rotation);  
 	newGameObject.name = ballPrefab.name.Substring(0,ballStringLength);
-	//Debug.Log(newGameObject.name);
 }
 
 function hasReachCircleArea()
@@ -112,6 +117,28 @@ function hasReachCircleArea()
 	if(gameObject.transform.position.x > circle.transform.position.x - size &&
 		gameObject.transform.position.x < circle.transform.position.x + size &&
 		gameObject.transform.position.y > circle.transform.position.y - size &&
-		gameObject.transform.position.y < circle.transform.position.y + size)return true;
+		gameObject.transform.position.y < circle.transform.position.y + size)
+	{
+		Debug.Log("fadsd");
+		return true;
+	}
 	return false;
+}
+
+function JudgeLifeTime()
+{
+	var nullVector:Vector3 = new Vector3(0,0,0);
+	if(gameObject.rigidbody.velocity != nullVector && !hasRan)
+	{
+		hasRan = true;
+		lifeTime = Time.time;	
+	}
+	if(Time.time - lifeTime >= 5 && hasRan)newBall();
+}
+
+function CountLastFrameSpeed()
+{
+	var deltaX:float = gameObject.transform.position.x - currentPoint.x;
+	var deltaY:float = gameObject.transform.position.z - currentPoint.y;
+	lastFrameSpeed = Vector3(deltaX / Time.deltaTime,0,deltaY / Time.deltaTime);
 }
